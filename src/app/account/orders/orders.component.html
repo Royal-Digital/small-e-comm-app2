@@ -1,0 +1,63 @@
+<h2>Past orders</h2>
+<ng-container *ngIf="orders.length < 1">
+    <skltn-root duration="1000" [rectRadius]="0" flareWidth="50%" bgFill="#f2f2f2" flareFill="rgba(255,255,255, 0.5)"
+        *ngFor="let item of loader">
+        <!-- Card with Avatar -->
+        <div class="skltn-card">
+            <div class="skltn-card__body">
+                <div skltn-bone class="skltn-card__box"></div>
+            </div>
+        </div>
+    </skltn-root>
+</ng-container>
+<div class="order-box" *ngFor="let order of orders; let i = index">
+    <div class="detail-box">
+        <div style="flex: 4;">
+            <div class="flex-with-space-between">
+                <div style="margin-bottom: 5px;" class="flex-item-center">
+                    <img src="https://img.pngio.com/correct-prompt-correct-right-icon-with-png-and-vector-format-for-correct-symbol-png-512_512.png"
+                        width="20px" height="20px" style="margin-right: 5px;">
+                    <span style="font-size: 16px; font-weight: 600;">
+                        Delivered on {{order.time}}</span>
+
+                </div>
+
+            </div>
+            <div><label>{{order.meals.length}} items for ₹ {{order.totalPrice}}</label></div>
+            <ul style="margin-top: 15px;">
+                <li style="margin-bottom: 10px;" class="flex-item-center" *ngFor="let meal of order.meals">
+                    <div class="border-box">{{meal.quantity}}</div>
+                    <div class="very-small-gap"></div>
+                    <span>{{meal.name}}</span>
+                </li>
+
+            </ul>
+        </div>
+        <div style="margin-top: 20px;" class="flex-column flex2">
+            <button mat-raised-button class="full-height full-width" color="primary" style="height: 40px;">
+                REORDER
+            </button>
+
+            <div style="margin: 20px 0px 10px 0px; text-align: center;">
+                <mat-icon (mouseover)="fillStars(i, 1)" (mouseout)="removeFillStars(i)" (click)= "addRating(i, 1)" [ngStyle] = "{'color': starBoxList[i].stars === 5 ? '#FFC552' : 'inherit' }"> 
+                    {{starBoxList[i].stars >= 1? 'star' : 'star_outline'}}
+                </mat-icon>
+                <mat-icon (mouseover)="fillStars(i, 2)" (mouseout)="removeFillStars(i)" (click)= "addRating(i, 2)" [ngStyle] = "{'color': starBoxList[i].stars === 5 ? '#FFC552' : 'inherit' }">
+                    {{starBoxList[i].stars >= 2? 'star' : 'star_outline'}}
+                </mat-icon>
+                <mat-icon (mouseover)="fillStars(i, 3)" (mouseout)="removeFillStars(i)" (click)= "addRating(i, 3)" [ngStyle] = "{'color': starBoxList[i].stars === 5 ? '#FFC552' : 'inherit' }">
+                    {{starBoxList[i].stars >= 3? 'star' : 'star_outline'}}
+                </mat-icon>
+                <mat-icon (mouseover)="fillStars(i, 4)" (mouseout)="removeFillStars(i)" (click)= "addRating(i, 4)" [ngStyle] = "{'color': starBoxList[i].stars === 5 ? '#FFC552' : 'inherit' }">
+                    {{starBoxList[i].stars >= 4? 'star' : 'star_outline'}}
+                </mat-icon>
+                <mat-icon (mouseover)="fillStars(i, 5)" (mouseout)="removeFillStars(i)" (click)= "addRating(i, 5)" [ngStyle] = "{'color': starBoxList[i].stars === 5 ? '#FFC552' : 'inherit' }">
+                    {{starBoxList[i].stars >= 5? 'star' : 'star_outline'}}
+                </mat-icon>
+            </div>
+            <label style="text-align: center;">Help us to improve our quantity</label>
+        </div>
+    </div>
+
+
+</div>

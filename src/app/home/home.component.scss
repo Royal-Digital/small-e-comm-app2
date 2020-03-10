@@ -1,0 +1,97 @@
+@mixin menu-theme($main-theme, $custom-success-color){
+    $primary: map-get($main-theme, primary);
+    $accent: map-get($main-theme, accent);
+    $warn: map-get($main-theme, warn);
+    $foreground: map-get($main-theme, foreground);
+    $background: map-get($main-theme, background);
+    
+    .selected-menu-text {
+       color: mat-color($primary, 600);
+       border-left: 4px solid mat-color($primary, 600);
+       padding-left: 15px;
+    }    
+    .menu:hover{
+    //     padding-left: 15px;
+    //    border-left: 4px solid mat-color($primary,  300);
+    }
+    .menu-header{
+        padding: 0px 75px;
+        height: 80px;
+        position: sticky;
+        z-index: 2;
+        top: 0px;
+        background: #fff;
+        box-shadow: 0 15px 40px -20px rgba(40,44,63,.15);
+        .item{
+            border-bottom: 2px solid #fff;
+            margin-right: 40px;       
+            height: 78px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+          
+        }
+        .item:hover{
+            border-bottom: 2px solid lightslategrey;
+        }
+    }
+  }
+.our-menu-container{
+    margin-top: 80px;
+    width: 100%;
+}
+.slider{
+    position: relative;
+    margin: 0 auto;
+    height: 220px;
+    padding: 0 70px;
+    background-color: #171a29;
+    contain: content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .img-box{
+        transition: 0.5s;
+        cursor: pointer;
+       
+    }
+    .img-box:hover{
+        transform: scale(1.05);
+    }
+}
+.title{
+    margin-top: 40px;
+    margin-bottom: 10px;
+    
+    padding: 0 30px;
+}
+.example-tree-invisible {
+    display: none;
+  }
+  
+  .example-tree ul,
+  .example-tree li {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+  }
+
+.circle {
+    width: 10px; 
+    height: 10px; 
+    border: 1px solid lightgray; 
+    border-radius: 50%;
+}
+.menu{
+    transition: 0.5s;
+    font-size: 16px;
+}
+.menu-sticky{    
+    position:sticky;
+    top:80px;
+}
+.fixedElement {
+    position:sticky;
+    top:100px;
+}
+

@@ -1,0 +1,347 @@
+<div class="review-box">
+    <h1 style="text-align: center;">
+        Reviews & Ratings
+    </h1>
+    <p style="text-align: center;">
+        100% genuine reviews from real foodies based on real experiences
+    </p>
+    <div class="flex" style="margin-top: 60px;">
+        <div class="flex">
+            <div style="margin-right: 20px;">
+                <div class="rating">
+                    3.7
+                    <span class="rating_span">/5</span>
+                </div>
+                <div style="margin-top: 5px; text-align: center;">
+                    <label>500+ Reviews</label>
+                </div>
+            </div>
+            <div class="rating-star-box">
+                <div class="flex-item-center">
+                    <div class="rating-percentage" style="margin-right: 5px;">
+                        <span>41%</span>
+                    </div>
+                    <div>
+                        <mat-icon style="color: #FFC552;">star</mat-icon>
+                        <mat-icon style="color: #FFC552;">star</mat-icon>
+                        <mat-icon style="color: #FFC552;">star</mat-icon>
+                        <mat-icon style="color: #FFC552;">star</mat-icon>
+                        <mat-icon style="color: #FFC552;">star</mat-icon>
+                    </div>
+                </div>
+                <div class="flex-item-center">
+                    <div class="rating-percentage" style="margin-right: 5px;">
+                        <span>20%</span>
+                    </div>
+                    <div>
+                        <mat-icon style="color: #FFC552;">star</mat-icon>
+                        <mat-icon style="color: #FFC552;">star</mat-icon>
+                        <mat-icon style="color: #FFC552;">star</mat-icon>
+                        <mat-icon style="color: #FFC552;">star</mat-icon>
+                        <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                    </div>
+                </div>
+                <div class="flex-item-center">
+                    <div class="rating-percentage" style="margin-right: 5px;">
+                        <span>10%</span>
+                    </div>
+                    <div>
+                        <mat-icon style="color: #FFC552;">star</mat-icon>
+                        <mat-icon style="color: #FFC552;">star</mat-icon>
+                        <mat-icon style="color: #FFC552;">star</mat-icon>
+                        <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                        <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                    </div>
+                </div>
+                <div class="flex-item-center">
+                    <div class="rating-percentage" style="margin-right: 5px;">
+                        <span>5%</span>
+                    </div>
+                    <div>
+                        <mat-icon style="color: #FFC552;">star</mat-icon>
+                        <mat-icon style="color: #FFC552;">star</mat-icon>
+                        <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                        <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                        <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                    </div>
+                </div>
+                <div class="flex-item-center">
+                    <div class="rating-percentage" style="margin-right: 5px;">
+                        <span>2%</span>
+                    </div>
+                    <div>
+                        <mat-icon style="color: #FFC552;">star</mat-icon>
+                        <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                        <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                        <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                        <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="write-review-box flex4" style="margin-left: 40px;">
+            <div class="flex-with-space-between">
+                <div class="flex-item-center">
+                    <span style="font-weight: 600; opacity: 0.8; font-size: 16px;">Your Rating</span>
+                    <div class="small-gap"></div>
+                    <div style="text-align: center;">
+                        <mat-icon (mouseover)="fillStars(1)" (mouseout)="removeFillStars()" (click)="addRating(1)"
+                            [ngStyle]="{'color': stars === 5 ? '#FFC552' : 'inherit' }">
+                            {{stars >= 1? 'star' : 'star_outline'}}
+                        </mat-icon>
+                        <mat-icon (mouseover)="fillStars(2)" (mouseout)="removeFillStars()" (click)="addRating(2)"
+                            [ngStyle]="{'color': stars === 5 ? '#FFC552' : 'inherit' }">
+                            {{stars >= 2? 'star' : 'star_outline'}}
+                        </mat-icon>
+                        <mat-icon (mouseover)="fillStars(3)" (mouseout)="removeFillStars()" (click)="addRating(3)"
+                            [ngStyle]="{'color': stars === 5 ? '#FFC552' : 'inherit' }">
+                            {{stars >= 3? 'star' : 'star_outline'}}
+                        </mat-icon>
+                        <mat-icon (mouseover)="fillStars(4)" (mouseout)="removeFillStars()" (click)="addRating(4)"
+                            [ngStyle]="{'color': stars === 5 ? '#FFC552' : 'inherit' }">
+                            {{stars >= 4? 'star' : 'star_outline'}}
+                        </mat-icon>
+                        <mat-icon (mouseover)="fillStars(5)" (mouseout)="removeFillStars()" (click)="addRating(5)"
+                            [ngStyle]="{'color': stars === 5 ? '#FFC552' : 'inherit' }">
+                            {{stars >= 5? 'star' : 'star_outline'}}
+                        </mat-icon>
+                    </div>
+                </div>
+                <div>
+                    <button mat-raised-button color="primary">
+                        Publish Review
+                    </button>
+                </div>
+            </div>
+            <div style="margin-top: 10px;">
+                <mat-form-field appearance="outline" style="width: 100%">
+                    <mat-label>Write your review</mat-label>
+                    <textarea rows="3" matInput
+                        placeholder="Tip: A great review covers food, service, and ambiance. Got recommendations for your favorite dishes and drinks, or something everyone should try here? Include that too! And remember, your review needs to be at least 140 characters long :)"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <div class="reviews">
+        <h2 style="padding-left: 10px;">Reviews (500+)</h2>
+        <div class="reviews-list">
+            <mat-card style="width: 100% !important;">
+                <div class="containt">
+                    <div class="flex-with-space-between">
+                        <div class="flex">
+                            <img src="https://icon-library.net/images/avatar-icon-png/avatar-icon-png-8.jpg"
+                                width="35px">
+                            <div class="flex-column" style="margin-left: 10px;">
+                                <span style="font-size: 16px;" class="primary">Piyush Jain</span>
+                                <label style="margin-top: 5px; opacity: 0.5;">18 Sep 2019 06:38 PM</label>
+                            </div>
+                        </div>
+                        <div>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <span style="opacity: 0.8; font-weight: 400;"> Went out with friends for dinner and found
+                            this quite sophisticated place in Ravet. <br>
+                            Ordered Chicken lollypop, Chicken Handi, Chicken Tandoori and Paneer Butter Masala.
+                            <br>Food
+                            was just Amazing and ended up repeating the items. Were full upto the throat. A must
+                            visit place
+                        </span>
+                    </div>
+                </div>
+            </mat-card>
+            <mat-card style="width: 100% !important;">
+                <div class="containt">
+                    <div class="flex-with-space-between">
+                        <div class="flex">
+                            <img src="https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/10_avatar-512.png"
+                                width="35px">
+                            <div class="flex-column" style="margin-left: 10px;">
+                                <span style="font-size: 16px;" class="primary">Piyush Jain</span>
+                                <label style="margin-top: 5px; opacity: 0.5;">18 Sep 2019 06:38 PM</label>
+                            </div>
+                        </div>
+                        <div>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <span style="opacity: 0.8; font-weight: 400;"> Went out with friends for dinner and found
+                            this quite sophisticated place in Ravet.
+                            Ordered Chicken lollypop, Chicken Handi, Chicken Tandoori and Paneer Butter Masala.
+                            <br>Food
+                            was just Amazing and ended up repeating the items. Were full upto the throat. A must
+                            visit place
+                        </span>
+                    </div>
+                </div>
+            </mat-card>
+            <mat-card style="width: 100% !important;">
+                <div class="containt">
+                    <div class="flex-with-space-between">
+                        <div class="flex">
+                            <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png"
+                                width="35px">
+                            <div class="flex-column" style="margin-left: 10px;">
+                                <span style="font-size: 16px;" class="primary">Piyush Jain</span>
+                                <label style="margin-top: 5px;opacity: 0.5;">18 Sep 2019 06:38 PM</label>
+                            </div>
+                        </div>
+                        <div>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                            <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <span style="opacity: 0.8; font-weight: 400;">
+                            Awesome Taste. Thanks
+                        </span>
+                    </div>
+                </div>
+            </mat-card>
+            <mat-card style="width: 100% !important;">
+                <div class="containt">
+                    <div class="flex-with-space-between">
+                        <div class="flex">
+                            <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png"
+                                width="35px">
+                            <div class="flex-column" style="margin-left: 10px;">
+                                <span style="font-size: 16px;" class="primary">Piyush Jain</span>
+                                <label style="margin-top: 5px;opacity: 0.5;">18 Sep 2019 06:38 PM</label>
+                            </div>
+                        </div>
+                        <div>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                            <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <span style="opacity: 0.8; font-weight: 400;">
+                            Awesome Taste. Thanks
+                        </span>
+                    </div>
+                </div>
+            </mat-card>   <mat-card style="width: 100% !important;">
+                <div class="containt">
+                    <div class="flex-with-space-between">
+                        <div class="flex">
+                            <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png"
+                                width="35px">
+                            <div class="flex-column" style="margin-left: 10px;">
+                                <span style="font-size: 16px;" class="primary">Piyush Jain</span>
+                                <label style="margin-top: 5px;opacity: 0.5;">18 Sep 2019 06:38 PM</label>
+                            </div>
+                        </div>
+                        <div>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                            <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <span style="opacity: 0.8; font-weight: 400;">
+                            Awesome Taste. Thanks
+                        </span>
+                    </div>
+                </div>
+            </mat-card>   <mat-card style="width: 100% !important;">
+                <div class="containt">
+                    <div class="flex-with-space-between">
+                        <div class="flex">
+                            <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png"
+                                width="35px">
+                            <div class="flex-column" style="margin-left: 10px;">
+                                <span style="font-size: 16px;" class="primary">Piyush Jain</span>
+                                <label style="margin-top: 5px;opacity: 0.5;">18 Sep 2019 06:38 PM</label>
+                            </div>
+                        </div>
+                        <div>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                            <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <span style="opacity: 0.8; font-weight: 400;">
+                            Awesome Taste. Thanks
+                        </span>
+                    </div>
+                </div>
+            </mat-card>   <mat-card style="width: 100% !important;">
+                <div class="containt">
+                    <div class="flex-with-space-between">
+                        <div class="flex">
+                            <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png"
+                                width="35px">
+                            <div class="flex-column" style="margin-left: 10px;">
+                                <span style="font-size: 16px;" class="primary">Piyush Jain</span>
+                                <label style="margin-top: 5px;opacity: 0.5;">18 Sep 2019 06:38 PM</label>
+                            </div>
+                        </div>
+                        <div>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                            <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <span style="opacity: 0.8; font-weight: 400;">
+                            Awesome Taste. Thanks
+                        </span>
+                    </div>
+                </div>
+            </mat-card>   <mat-card style="width: 100% !important;">
+                <div class="containt">
+                    <div class="flex-with-space-between">
+                        <div class="flex">
+                            <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png"
+                                width="35px">
+                            <div class="flex-column" style="margin-left: 10px;">
+                                <span style="font-size: 16px;" class="primary">Piyush Jain</span>
+                                <label style="margin-top: 5px;opacity: 0.5;">18 Sep 2019 06:38 PM</label>
+                            </div>
+                        </div>
+                        <div>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star</mat-icon>
+                            <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                            <mat-icon style="color: #FFC552;">star_outline</mat-icon>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <span style="opacity: 0.8; font-weight: 400;">
+                            Awesome Taste. Thanks
+                        </span>
+                    </div>
+                </div>
+            </mat-card>
+
+          
+        </div>
+    </div>
+</div>

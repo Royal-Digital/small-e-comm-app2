@@ -1,0 +1,38 @@
+.review-box{
+    margin-top: 60px;
+    min-height: 350px;
+    padding: 60px 75px;
+    .rating{
+        width: 108px;
+        height: 52px;
+        background:#9ACD32;
+        border-color: #9ACD32!important;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 36px;
+        .rating_span{
+            margin-top: 5px;
+            margin-left: 10px;
+            font-size: 25px;
+            opacity: .5;
+        }
+    }
+    .rating-star-box{
+        .rating-percentage{
+            width: 30px;
+        }
+    }
+    .reviews{
+        margin-top: 40px;
+        .reviews-list{
+            padding: 20px 0px;
+            .containt{
+                padding: 20px;
+            }
+        }
+    }
+}

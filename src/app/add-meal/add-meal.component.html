@@ -1,0 +1,71 @@
+<div class="add-item-model-container">
+
+  <div class="model-header">
+
+    <div class="flex-item-center">
+      <div class="very-small-gap"></div>
+      <h1>{{data.name}}</h1>
+
+    </div>
+    <button mat-mini-fab color="default" (click)="onNoClick()">
+      <mat-icon fontSet="material-icons-outlined" mat-icon-button class="icon">close</mat-icon>
+    </button>
+  </div>
+  <div class="model-body">
+    <div class="img-box padding-horizontaly">
+      <img style="border-radius: 10px;" [src]="data.image" width="280px" height="200px"
+          data-selected="true" data-label-id="0" alt="image">
+    </div>
+    <div class="flex-column full-width" style="padding: 0 20px;">
+      <div class="instruction">
+        <h2>{{selectedType.price | currency:'USD'}}</h2>
+      </div>
+      <div class="instruction">
+        <span>{{data.description}}</span>
+      </div>
+      <div class="small-vertical-height"></div>
+      <div class="instruction">
+        <span *ngIf="selectedType">Stock: {{selectedType.stock}}</span>
+        <div class="small-gap"></div>
+        <mat-form-field>
+          <mat-label>Select Type</mat-label>
+          <mat-select [(ngModel)] = "selectedType">
+            <mat-option *ngFor="let type of data.types" [value]="type">
+              {{type.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      
+    </div>
+  </div>
+  <div class="model-footer flex-with-space-between">
+    <div class="flex-item-center">
+      <button mat-mini-fab style="margin-right: 10px;" color="default" [disabled]="itemCount < 2" (click)="remove()">
+        <mat-icon fontSet="material-icons-outlined" mat-icon-button class="icon">remove</mat-icon>
+      </button>
+      <span>{{itemCount}}</span>
+      <button mat-mini-fab style="margin-left: 10px;" color="default" [disabled]="itemCount >= selectedType.stock" (click)="add()">
+        <mat-icon fontSet="material-icons-outlined" mat-icon-button class="icon">add</mat-icon>
+      </button>
+    </div>
+    <h4 class="opacity bold">Total Item Price: {{itemCount * selectedType.price | currency:'USD'}}</h4>
+
+    <div class="flex-item-center full-height">
+      <button mat-raised-button class="full-height" color="primary" (click)="addToCart()"
+      [mat-dialog-close]="data">
+      <div>
+        Add to Cart
+      </div>
+    </button>
+    <div class="small-gap"></div>
+    <button mat-raised-button class="full-height" color="accent" (click)="buyNow()"
+      [mat-dialog-close]="data">
+      <div>
+        Buy Now
+      </div>
+    </button>
+    </div>
+   
+  </div>
+</div>

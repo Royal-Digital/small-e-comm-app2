@@ -1,0 +1,464 @@
+
+@import '../app/checkout/checkout.component.scss';
+@import '../app/account/orders/orders.component.scss';
+
+
+@mixin component-theme($theme, $custom-success-color) {
+    @include checkout-theme($theme, $custom-success-color);
+    @include order-theme($theme, $custom-success-color);
+    
+    
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
+$warn: map-get($theme, warn);
+$foreground: map-get($theme, foreground);
+$background: map-get($theme, background);
+
+
+h1,h2,h3,h4{
+    font-weight: 600;
+    margin: 0;
+}
+
+.primary {
+    color: mat-color($primary, 500);
+}
+
+.accent {
+    color: mat-color($accent);
+}
+a{
+    color: mat-color($primary, 500);
+}
+h2{
+    font-size: 20px;
+    margin: 0;
+}
+// ul {
+//     display: block;
+//     list-style-type: disc;
+//     margin-block-start: 1em;
+//     margin-block-end: 1em;
+//     margin-inline-start: 0px;
+//     margin-inline-end: 0px;
+//     padding-inline-start: 40px;
+// }
+ol, ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+li{
+    display: list-item;
+    outline: none;
+}
+li:active{
+    outline: none;
+}
+li {    
+    font-weight: 500 !important;
+    font-size: 14px;
+    cursor: pointer;
+}
+li:hover{
+    color: mat-color($primary, 500);
+}
+.hover-effect:hover{
+    color: mat-color($primary, 500);
+}
+
+mat-icon{
+    cursor: pointer;
+    color: mat-color($primary, 500);
+}
+
+.active {
+    outline: none;
+    background: mat-color($primary, 100);
+    font-weight: 800;
+    color: mat-color($primary, 800);
+    mat-icon {
+        color: mat-color($primary, 800) !important;
+    }
+}
+span{
+    font-size: 14px;
+    font-weight: inherit;
+}
+label{
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+.opacity {
+    opacity: 0.7;
+}
+.no-padding{
+    padding: 0;
+}
+.no-margin{
+    margin: 0;
+}
+.padding-horizontaly{
+    padding: 0px 20px;
+}
+.padding {
+    padding: 20px;
+}
+.bold {
+    font-weight: 600;
+}
+.micro-gap{
+    width: 5px;
+}
+.very-small-gap{
+    width: 10px;
+}
+.small-gap{
+    width: 20px;
+}
+.medium-gap{
+    width: 40px;
+}
+.large-gap{
+    width: 60px;
+}
+.very-large-gap{
+    width: 80px;;
+}
+
+.success{
+    color: $custom-success-color;
+}
+.full-height{
+    height: 100%;
+}
+.full-width{
+    width: 100%;
+}
+.flex-item-center{
+    display: flex;
+    align-items: center;
+}
+.flex-column-center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.flex{
+    display: flex;
+}
+.flex-only{
+    display: flex;
+    align-items: baseline;
+}
+.reverse-flex{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.flex-with-space-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.flex-middle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.flex1{
+    flex: 1;
+}
+.flex2{
+    flex: 2;
+}
+.flex3{
+    flex: 3;
+}
+.flex4{
+    flex: 4;
+}
+.button-box{
+    .default-button{
+        width: 100%;
+        height: 50px;
+        background: mat-color($primary);
+        //color: #fff;
+        text-transform: capitalize;
+        border-radius: 0;
+    }
+}
+.background{
+    background:  mat-color($background, background);
+}
+.foreground{
+    color:  mat-color($foreground, text);
+}
+.card-background{
+    background:  mat-color($background, card);
+}
+
+.success-background{
+    background: $custom-success-color;
+    color: white;
+}
+.success-outline{
+    border: 1px solid $custom-success-color !important;
+    color: $custom-success-color !important;
+}
+.success-outline:hover{
+    background: $custom-success-color;
+    color: white !important;
+}
+.primary-outline{
+    border: 1px solid  mat-color($primary) !important;
+    color: mat-color($primary) !important;
+}
+.primary-outline:hover{
+    background:mat-color($primary);
+    color: white !important;
+}
+
+button{
+    border-radius: 0 !important;
+    font-size: 14px !important;
+}
+.border-radius{
+    border-radius: 10px;
+}
+.box-shadow{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.pointer{
+    cursor: pointer;
+}
+
+
+
+.mat-form-field {
+    transition: 1s;
+}
+.mat-form-field:active, :checked{
+    transform: scaleX(100px);
+}
+.mat-option{
+    line-height: 25px !important;
+}
+.mat-standard-chip{
+    border-radius: 0 !important;
+    min-height: 25px !important;
+    font-size: 13px;
+}
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0px;
+}
+.card{
+    width: 270px;
+    transition: 1s;
+    cursor: pointer;
+   // border: 1px solid;
+    margin: 10px;
+    margin-bottom: 20px;
+    .details-box{
+        margin-top: 10px;
+        padding: 15px;
+    }
+   
+    border-radius: 10px;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+
+.second-view{
+    background: mat-color($accent);
+    min-height: 40vh;
+    .secondary-container-header{
+        height: 130px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        .header-text{
+            padding: 0px 10px;
+            display: flex;
+            flex-direction: column;
+            .primary-text{
+                font-size: 32px;
+                font-weight: 600;
+                text-transform: capitalize;
+            }
+            .secondary-text{
+                margin-top: 2px;
+                font-size: 16px;
+            }
+        }
+    }    
+    .body{
+        background: mat-color($background, app-bar);
+        margin-top: 40px;
+        padding: 50px;
+        display: flex;
+        .list-view{
+            flex: 1;
+            .list-box{
+                min-height: 400px;
+                min-width: 260px;
+                background: mat-color($background, card);
+                padding: 15px 0px;
+                position: sticky;
+                top: 111px;
+               .item{
+
+                    padding: 20px 20px;
+                    margin-left: 20px;
+                    cursor: pointer;
+                    display: flex;
+                    position: relative;
+                    .text{
+                        margin-left: 40px;
+                        font-size: 16px;
+                         color: mat-color($foreground, text);
+                       // font-weight: 500;
+                    }
+                    transition: 0.5s;
+               }
+               .item:hover .text{
+                      color:  mat-color($primary);
+               }
+               .item.active_item{
+                    .text{
+                        color:  mat-color($primary);
+                    }
+                     font-weight: 600 !important;
+                }
+            }
+        }
+        .result-view{
+            flex: 4;
+            margin-left: 10px;
+            .result-box{
+                padding: 30px;
+                .result-header{
+                    font-size: 24px;
+                    font-weight: 600;
+                    margin-left: 20px;
+                }
+                .expand-pannel{
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+.anchorActive{
+    border-bottom: 2px solid black !important;
+}
+.mat-mini-fab {
+    border-radius: 50% !important;
+}
+.mat-dialog-container{
+    border-radius: 0 !important;
+    padding: 0 !important;
+}
+
+.cart-card{
+    width: 380px !important;
+    .cart-card-header{
+        height: 60px;
+        border-bottom: 1px solid lightgray;
+    }
+    .cart-card-body{
+        max-height: 200px;
+        overflow: auto;
+    }
+    .cart-card-footer{
+        height: 50px;
+    }
+}
+
+
+  .skltn-card {
+    margin: 20px 0 48px;
+  }
+  .skltn-card__avatar {
+    width: 60px;
+    height: 60px; /* <-- Don't forget height */
+    margin-bottom: 20px;
+  }
+  .skltn-card__title {
+    height: 32px;
+    margin-bottom: 20px;
+  }
+  .skltn-card__box {
+    height: 150px;
+  }
+  
+  .skltn-card__line {
+    height: 20px;
+    margin-bottom: 20px;
+  }
+//   .skltn-card__line:last-child {
+//     width: 60%;
+//   }
+
+    mat-card{
+        width: 270px !important;
+        transition: 1s !important;
+        cursor: pointer !important;
+    // border: 1px solid;
+        margin: 10px !important;
+        margin-bottom: 20px;
+        .details-box{
+            margin-top: 10px;
+            padding: 15px;
+        }
+        padding: 0px !important;
+        border-radius: 10px !important;
+    }
+    .header-dropdown{
+        .mat-select-arrow{ 
+            visibility: hidden; 
+        }
+    }
+    .veg-enable{
+        .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+            background-color: rgba(56, 142, 60, 0.54);
+        }
+        .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+            background-color: #388e3c;
+        }
+    }
+   
+    .mat-tree{
+        background: inherit;
+    }
+    .left-border{
+        border-left: 4px solid mat-color($primary, 500);
+    }
+    .header-line{
+        height: 4px; 
+        width: 100%; 
+        background-color: mat-color($primary, 500);
+    }
+    .mat-form-field-appearance-fill .mat-form-field-flex{
+        background: white;
+    }
+    .mat-form-field-appearance-fill .mat-form-field-flex{
+        border-radius: 0;
+    }
+    .vertical-height{
+        height: 20px;
+    }
+}

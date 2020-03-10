@@ -1,0 +1,93 @@
+<div class="our-menu-container">
+    <div class="flex" style="min-height: 600px;">
+        <div class="full-width">
+            <div style="padding: 20px 20px; ">
+                <ng-container *ngIf="!products">
+                    <div class="card-container">
+                        <skltn-root class="card" style="box-shadow: none;" duration="1000" [rectRadius]="0"
+                            flareWidth="50%" bgFill="#e6e6e6" flareFill="rgba(255,255,255, 0.5)"
+                            *ngFor="let item of loader">
+
+                            <div class="skltn-card">
+                                <div class="skltn-card__body">
+                                    <div skltn-bone class="skltn-card__box"></div>
+                                    <div skltn-bone class="skltn-card__line"></div>
+                                    <div skltn-bone class="skltn-card__line"></div>
+                                    <div skltn-bone class="skltn-card__line"></div>
+                                    <div skltn-bone class="skltn-card__line"></div>
+                                </div>
+                            </div>
+                        </skltn-root>
+                    </div>
+                </ng-container>
+                <div class="flex-with-space-between full-width">
+                    <h2>Our Products</h2>
+                    <div class="flex-item-center">
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width" style="width: 350px;">
+                                <input matInput placeholder="Search product by name"
+                                    [(ngModel)]="searchNameModel" (ngModelChange) = "searchProductsEvent()" [ngModelOptions]="{standalone: true}">
+                                <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                                    <mat-icon>search</mat-icon>
+                                </button>
+                            </mat-form-field>
+                        </form>
+                        <div class="small-gap"></div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Categories</mat-label>
+                            <mat-select multiple [(ngModel)] = "selectedCategories" (selectionChange) = "onSelectCagetoriesEvent($event)">
+                                 <mat-select-trigger>
+                                    {{selectedCategories ? (selectedCategories[0] ? selectedCategories[0].name: '' ) : ''}}
+                                    <span *ngIf="selectedCategories?.length > 1" class="example-additional-selection">
+                                        (+{{selectedCategories.length - 1}}
+                                        {{selectedCategories?.length === 2 ? 'other' : 'others'}})
+                                    </span>
+                                </mat-select-trigger> 
+                                <mat-option *ngFor="let item of categories" [value]="item">{{item.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div class="small-gap"></div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Type</mat-label>
+                            <mat-select multiple [(ngModel)]="selectedTypeList" (selectionChange) = "onSelectTypeEvent($event)">
+                                <mat-select-trigger>
+                                    {{selectedTypeList ? (selectedTypeList[0] ? selectedTypeList[0].name: '' ) : ''}}
+                                    <span *ngIf="selectedTypeList?.length > 1" class="example-additional-selection">
+                                        (+{{selectedTypeList.length - 1}}
+                                        {{selectedTypeList?.length === 2 ? 'other' : 'others'}})
+                                    </span>
+                                </mat-select-trigger>
+                                <mat-option *ngFor="let item of types" [value]="item">{{item.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+                <div class="card-container" *ngIf="products">
+                    <mat-card class="card onLoad" style=" box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);"
+                        *ngFor="let item of sortBy('name')" (click)="addItemDialog(item)">
+                        <div class="img-box">
+                            <img style="border-radius: 10px;" [src]="item.image" width="270px" height="160px"
+                                data-selected="true" data-label-id="0" alt="image">
+                        </div>
+                        <div class="details-box">
+                            <span style="font-weight: 600;">{{item.name}}</span>
+
+                            <div class="flex-with-space-between" style="margin-top: 10px;">
+                                <div>
+                                    <span style="font-weight: 600;">{{item.types[0].price | currency:'USD'}} - {{item.types[item.types.length-1].price | currency:'USD'}}</span>
+                                </div> 
+                                <label>{{item.category.name}}</label>
+                            </div>
+
+                        </div>
+                    </mat-card>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+.add-item-model-container{
+    min-height: 300px;
+
+    .model-header{
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .model-body{
+        display: flex;
+        justify-content: space-between;
+       .instruction{
+           width: 100%;
+           min-height: 55px;
+           display: flex;
+           align-items: center;
+       }
+    }
+    .model-footer{
+        height: 50px;
+        padding: 20px 20px;
+    }
+}
+.mat-select-arrow {
+    visibility: visible !important;
+}

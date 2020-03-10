@@ -1,0 +1,29 @@
+
+@mixin order-theme($main-theme, $custom-success-color){
+    $primary: map-get($main-theme, primary);
+    $accent: map-get($main-theme, accent);
+    $warn: map-get($main-theme, warn);
+    $foreground: map-get($main-theme, foreground);
+    $background: map-get($main-theme, background);
+    
+.order-box{
+    background: mat-color($background, card);
+    margin: 10px 0px;
+    padding-bottom: 10px;
+    min-height: 100px;
+    .detail-box{
+        padding: 15px 15px 15px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-left: 20px;
+        min-width: 230px;
+        .border-box {
+            border: 1px solid lightgray;
+            width: 20px;
+            text-align: center;
+            height: 20px;
+        }
+    }
+}
+}
