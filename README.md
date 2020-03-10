@@ -8,7 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Add JSON-Server Globally 
  
-npm i json-server
+npm install -g json-server
 
 ## How to Run project:
 
